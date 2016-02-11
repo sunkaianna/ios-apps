@@ -21,7 +21,7 @@
 @property (nonatomic) CGPoint secondPoint;
 
 -(id)init;
--(void)drawLine:(CGContextRef) context : (CGPoint)
+-(void)drawLine:(CGContextRef) context : (CGPoint) mappingConstant;
 
 @end
 #endif

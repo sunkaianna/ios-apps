@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		368D10441C6D66CA002B006D /* Square.m in Sources */ = {isa = PBXBuildFile; fileRef = 368D10431C6D66CA002B006D /* Square.m */; };
 		36F3B0E51C6BD5C900621211 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F3B0E41C6BD5C900621211 /* Line.m */; };
 		F280CE8C1C5F7B8900B8FB4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F280CE8B1C5F7B8900B8FB4E /* main.m */; };
 		F280CE8F1C5F7B8900B8FB4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F280CE8E1C5F7B8900B8FB4E /* AppDelegate.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		368D10421C6D66CA002B006D /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Square.h; sourceTree = "<group>"; };
+		368D10431C6D66CA002B006D /* Square.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Square.m; sourceTree = "<group>"; };
 		36F3B0E31C6BD5C900621211 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
 		36F3B0E41C6BD5C900621211 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
 		F280CE871C5F7B8900B8FB4E /* CameraShapes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraShapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +78,8 @@
 				F280CEA21C5F7EC700B8FB4E /* Circle.m */,
 				36F3B0E31C6BD5C900621211 /* Line.h */,
 				36F3B0E41C6BD5C900621211 /* Line.m */,
+				368D10421C6D66CA002B006D /* Square.h */,
+				368D10431C6D66CA002B006D /* Square.m */,
 				F280CEA41C5F7EDF00B8FB4E /* Shape2D.h */,
 				F280CEA51C5F7EDF00B8FB4E /* Shape2D.m */,
 				F280CE931C5F7B8900B8FB4E /* Main.storyboard */,
@@ -122,7 +127,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = CMPE161;
+				ORGANIZATIONNAME = "Vikrant More";
 				TargetAttributes = {
 					F280CE861C5F7B8900B8FB4E = {
 						CreatedOnToolsVersion = 7.2;
@@ -168,6 +173,7 @@
 				F280CE921C5F7B8900B8FB4E /* ViewController.m in Sources */,
 				36F3B0E51C6BD5C900621211 /* Line.m in Sources */,
 				F280CEA61C5F7EDF00B8FB4E /* Shape2D.m in Sources */,
+				368D10441C6D66CA002B006D /* Square.m in Sources */,
 				F280CEA31C5F7EC700B8FB4E /* Circle.m in Sources */,
 				F280CE8F1C5F7B8900B8FB4E /* AppDelegate.m in Sources */,
 				F280CE8C1C5F7B8900B8FB4E /* main.m in Sources */,
@@ -282,7 +288,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Assignment2Template/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = CMPE161.Assignment2Template;
+				PRODUCT_BUNDLE_IDENTIFIER = CameraShapes;
 				PRODUCT_NAME = CameraShapes;
 			};
 			name = Debug;
@@ -293,7 +299,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Assignment2Template/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = CMPE161.Assignment2Template;
+				PRODUCT_BUNDLE_IDENTIFIER = CameraShapes;
 				PRODUCT_NAME = CameraShapes;
 			};
 			name = Release;

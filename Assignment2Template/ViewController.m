@@ -35,6 +35,7 @@
     
     //Initialize arrays
     _listOfCircles = [[NSMutableArray alloc]init];
+    _listOfLines = [[NSMutableArray alloc]init];
     
     //Initialize AVCaptureDevice
     [self initCapture];
@@ -47,7 +48,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)canBecomeFirstResponder{
+    return YES;
+}
 
+- (void) motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+    if(UIEventSubtypeMotionShake){
+        NSLog(@"Shaking!\n");
+        [_listOfCircles removeAllObjects];
+        [_listOfLines removeAllObjects];
+        
+    }
+}
 
 #pragma mark - Camera
 - (void)initCapture {
@@ -98,7 +110,7 @@
 
 #warning Add any UI elements here
     [self.view addSubview:_object2DSelectionSegmentControl];//Adding the segment control
-    
+    [self.view addSubview:_objectRotateSlider];
     
     //Once startRunning is called the camera will start capturing frames
     [self.captureSession startRunning];
@@ -207,17 +219,32 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         
     //Draw lines
     }else if (_objectToDraw == LINE){
-   
-        //Example of calling class method from Shape2D to rotate a vector by 90 degrees
-        CGPoint results;
-        results = [Shape2D rotateVector:GLKVector3Make(4.0f, 3.0f, 0.0f) :90];
+        //Iterate through the list of circles and draw them all
+        for (int i=0; i<[_listOfLines count]; i++) {
+            
+            //Mapping constant calculated to do the mapping from Points to Context
+            [_listOfLines[i] drawLine:context:CGPointMake((_contextSize.y/_viewSize.x), (_contextSize.x/_viewSize.y))];
+        }
         
+        
+        //Example of calling class method from Shape2D to rotate a vector by 90 degrees
+//        CGPoint results;
+//        results = [Shape2D rotateVector:GLKVector3Make(4.0f, 3.0f, 0.0f) :90];
+//        
         
         
         
       
 
-    }
+    }else if (_objectToDraw == SQUARE){
+        CGPoint center;
+        center.x = 160;
+        center.y = 284;
+        //self.view addSubview:<#(nonnull UIView *)#>
+        Square* square = [[Square alloc]initWithCGPoint:center];
+        [square drawRectangle:context :CGPointMake((_contextSize.y/_viewSize.x), (_contextSize.x/_viewSize.y))];
+        
+         }
     //----------------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------------
     
@@ -247,12 +274,33 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     UITouch *touch = [touches anyObject];
+    NSArray *twoTouch = [touches allObjects];
+    UITouch *touchOne, *touchTwo;
+    CGPoint firstTouch, secondTouch;
+    if(touches.count ==2){
+        touchOne = [twoTouch objectAtIndex:0];
+        touchTwo = [twoTouch objectAtIndex:1];
+        firstTouch = [touchOne locationInView:self.view];
+        secondTouch = [touchTwo locationInView:self.view];
+    }
     CGPoint point = [touch locationInView:self.view];
-    
+    CGPoint point1 = [touch locationInView:self.view];
+    if (_objectToDraw == CIRCLE){
     Circle* circle = [[Circle alloc]initWithCGPoint:point];
     //Add it to list of circles
-    [_listOfCircles addObject:circle];
-    
+        [_listOfCircles addObject:circle];
+    }
+    if (_objectToDraw == LINE){
+        NSLog(@"X1 Location: %f", point.x);
+        NSLog(@"Y1 Location: %f", point.y);
+        
+        NSLog(@"X2 Location: %f", point1.x);
+        NSLog(@"Y2 Location: %f", point1.y);
+        Line* line = [[Line alloc]initWithCGPoint:firstTouch pointTwo:secondTouch];
+        //Circle* circle = [[Circle alloc]initWithCGPoint:point];
+        [_listOfLines addObject: line];
+    }
+
     //NSLog(@"X Location: %f", point.x);
     //NSLog(@"Y Location: %f", point.y);
 }
@@ -309,6 +357,9 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 //        //Add it to list of circles
 //        [_listOfCircles addObject:circle];
 //        [_listOfCircles addObject:circle1];
+    }else if(_object2DSelectionSegmentControl.selectedSegmentIndex == SQUARE){
+        _objectToDraw = SQUARE;
+        NSLog(@"Hallo");
     }
 }
 @end

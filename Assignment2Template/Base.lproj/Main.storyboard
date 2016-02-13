@@ -22,24 +22,33 @@
                                 <segments>
                                     <segment title="Lines"/>
                                     <segment title="Circles"/>
+                                    <segment title="Square"/>
                                 </segments>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="107" y="520" width="121" height="29"/>
+                                    <rect key="frame" x="41" y="475" width="228" height="29"/>
                                 </variation>
                                 <connections>
                                     <action selector="object2DSelectionSegmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Uqx-hu-RUj"/>
                                 </connections>
                             </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fJe-kV-bxE">
+                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="39" y="511" width="232" height="31"/>
+                                </variation>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="nCD-p8-JmS"/>
+                                <exclude reference="fJe-kV-bxE"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="nCD-p8-JmS"/>
+                                <include reference="fJe-kV-bxE"/>
                             </mask>
                         </variation>
                     </view>
@@ -47,11 +56,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="object2DSelectionSegmentControl" destination="nCD-p8-JmS" id="CXX-b6-ADD"/>
+                        <outlet property="objectRotateSlider" destination="fJe-kV-bxE" id="r0H-H7-soW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="529.5" y="236.5"/>
+            <point key="canvasLocation" x="529.5" y="236.25"/>
         </scene>
     </scenes>
 </document>

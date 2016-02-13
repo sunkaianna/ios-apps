@@ -11,11 +11,13 @@
 #import <GLKit/GLKit.h>
 #include <math.h>
 #include "Circle.h"
+#include "Line.h"
+#include "Square.h"
 
 @interface ViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate>
 
 //Enums
-typedef enum { LINE, CIRCLE } ObjectType;
+typedef enum { LINE, CIRCLE, SQUARE } ObjectType;
 
 //Properties
 @property (nonatomic) AVCaptureSession *captureSession;
@@ -26,6 +28,7 @@ typedef enum { LINE, CIRCLE } ObjectType;
 @property (nonatomic) CGPoint viewSize;
 @property (nonatomic) ObjectType objectToDraw;
 @property (nonatomic) NSMutableArray* listOfCircles;
+@property (nonatomic) NSMutableArray* listOfLines;
 
 
 
@@ -33,6 +36,7 @@ typedef enum { LINE, CIRCLE } ObjectType;
 //Outlets
 @property (weak, nonatomic) IBOutlet UISegmentedControl *object2DSelectionSegmentControl;
 
+@property (weak, nonatomic) IBOutlet UISlider *objectRotateSlider;
 
 
 

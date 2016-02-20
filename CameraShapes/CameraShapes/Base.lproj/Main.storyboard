@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nCD-p8-JmS">
+                                <rect key="frame" x="-60" y="-14" width="121" height="29"/>
+                                <segments>
+                                    <segment title="Lines"/>
+                                    <segment title="Circles"/>
+                                    <segment title="Square"/>
+                                </segments>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="41" y="449" width="228" height="29"/>
+                                </variation>
+                                <connections>
+                                    <action selector="object2DSelectionSegmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Uqx-hu-RUj"/>
+                                </connections>
+                            </segmentedControl>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumValue="-100" maximumValue="100" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="IMm-E6-MJx">
+                                <rect key="frame" x="-47" y="-14" width="94" height="29"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="175" y="519" width="94" height="29"/>
+                                </variation>
+                                <connections>
+                                    <action selector="translateScalingController:" destination="BYZ-38-t0r" eventType="valueChanged" id="jFl-l8-IxN"/>
+                                </connections>
+                            </stepper>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Tre-i0-h9W">
+                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="39" y="482" width="232" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="objectRotatedAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="8e7-se-rgT"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9J-TG-0Wg">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="98" y="519" width="42" height="28"/>
+                                </variation>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kl4-rN-4Na">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="41" y="517" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="rotateOrTranslateControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="MTZ-z7-LGe"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="nCD-p8-JmS"/>
+                                <exclude reference="IMm-E6-MJx"/>
+                                <exclude reference="Tre-i0-h9W"/>
+                                <exclude reference="j9J-TG-0Wg"/>
+                                <exclude reference="Kl4-rN-4Na"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="nCD-p8-JmS"/>
+                                <include reference="IMm-E6-MJx"/>
+                                <include reference="Tre-i0-h9W"/>
+                                <include reference="j9J-TG-0Wg"/>
+                                <include reference="Kl4-rN-4Na"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="object2DSelectionSegmentControl" destination="nCD-p8-JmS" id="CXX-b6-ADD"/>
+                        <outlet property="objectRotatedValue" destination="Tre-i0-h9W" id="LFD-tF-B0a"/>
+                        <outlet property="rotateOrTranslateButton" destination="Kl4-rN-4Na" id="E74-qY-l6y"/>
+                        <outlet property="translateIncrementValue" destination="IMm-E6-MJx" id="r1y-5N-UO3"/>
+                        <outlet property="translateScaling" destination="IMm-E6-MJx" id="XfO-i2-Jcn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="529.5" y="236.25"/>
+        </scene>
+    </scenes>
+</document>

@@ -287,7 +287,7 @@
                                     _m2_20.text.intValue, _m2_21.text.intValue, _m2_22.text.intValue);
     
     
-    GLKMatrix3 result = [_myCalculator matrixMultiplication:&m secondMatrix:&m1];
+    GLKMatrix3 result = [_myCalculator matrixMultiplication:&m1 secondMatrix:&m];
     
     _r_00.text = [NSString stringWithFormat:@"%.2f", result.m00];
     _r_01.text = [NSString stringWithFormat:@"%.2f", result.m01];
